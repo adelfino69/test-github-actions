@@ -250,15 +250,12 @@ section {
     color: #666;
 }
 
-.image-placeholder {
-    background-color: #ddd;
+.about-image img {
+    width: 100%;
     height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
     border-radius: 10px;
-    color: #666;
-    font-size: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
 .courses {
@@ -364,11 +361,13 @@ section {
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
-.instructor-image .image-placeholder {
+.instructor-image img {
     width: 150px;
     height: 150px;
     margin: 0 auto 20px;
     border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .instructor-info h3 {
@@ -400,12 +399,14 @@ section {
     cursor: pointer;
 }
 
-.gallery-item .image-placeholder {
+.gallery-item img {
+    width: 100%;
     height: 250px;
+    object-fit: cover;
     transition: var(--transition);
 }
 
-.gallery-item:hover .image-placeholder {
+.gallery-item:hover img {
     transform: scale(1.1);
 }
 
