@@ -19,6 +19,7 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 h1, h2, h3, h4 {
@@ -29,19 +30,26 @@ h1, h2, h3, h4 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: var(--transition);
     cursor: pointer;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
 }
 
 .btn-primary {
@@ -73,8 +81,14 @@ h1, h2, h3, h4 {
     background-color: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    padding: 15px 0;
+    padding: 10px 0;
     transition: var(--transition);
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: 15px 0;
+    }
 }
 
 .navbar.scrolled {
@@ -139,7 +153,7 @@ h1, h2, h3, h4 {
 
 .hero {
     height: 100vh;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23000" width="1200" height="800"/><text x="50%" y="50%" text-anchor="middle" fill="%23666" font-size="24">Tango Background Image</text></svg>') center/cover;
+    background: url('https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=1920&h=1080&fit=crop') center/cover;
     position: relative;
     display: flex;
     align-items: center;
@@ -152,7 +166,7 @@ h1, h2, h3, h4 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(139,0,0,0.3));
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(139,0,0,0.4));
 }
 
 .hero-content {
@@ -163,13 +177,13 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin-bottom: 30px;
     font-weight: 300;
 }
@@ -186,12 +200,18 @@ h1, h2, h3, h4 {
 }
 
 section {
-    padding: 80px 0;
+    padding: 50px 0;
+}
+
+@media (min-width: 768px) {
+    section {
+        padding: 80px 0;
+    }
 }
 
 .section-title {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--dark-color);
     margin-bottom: 50px;
     position: relative;
@@ -214,8 +234,8 @@ section {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 30px;
     align-items: center;
 }
 
@@ -264,8 +284,8 @@ section {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .course-card {
@@ -335,6 +355,13 @@ section {
 
 .course-schedule p {
     margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .course-schedule p {
+        font-size: 1rem;
+    }
 }
 
 .instructors {
@@ -343,8 +370,8 @@ section {
 
 .instructors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
 .instructor-card {
@@ -388,8 +415,27 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .gallery-item {
@@ -417,8 +463,8 @@ section {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .testimonial-card {
@@ -462,8 +508,8 @@ section {
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
 .contact-info h3 {
@@ -517,9 +563,10 @@ section {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .footer-brand h3 {
@@ -577,7 +624,82 @@ section {
     color: #ccc;
 }
 
-@media (max-width: 768px) {
+/* Tablet styles */
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .instructors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 2fr 1fr 1fr;
+        text-align: left;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .instructors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+}
+
+/* Mobile menu styles */
+@media (max-width: 767px) {
     .nav-menu {
         display: none;
     }
@@ -592,29 +714,5 @@ section {
     
     .hero-subtitle {
         font-size: 1.2rem;
-    }
-    
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-stats {
-        justify-content: space-around;
-    }
-    
-    .courses-grid,
-    .instructors-grid,
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .social-links {
-        justify-content: center;
     }
 }
