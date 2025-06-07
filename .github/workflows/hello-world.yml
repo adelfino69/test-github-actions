@@ -1,0 +1,22 @@
+name: Hello World
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  saluta:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stampa messaggio
+        run: echo "Ciao da GitHub Actions! 🚀"
+      
+      - name: Mostra data e ora
+        run: date
+      
+      - name: Info sistema
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF"
